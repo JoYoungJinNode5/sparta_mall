@@ -1,7 +1,7 @@
-// 1. mongoose
-import mongoose from "mongoose";
+// mongoose
+import mongoose from 'mongoose';
 
-// 2. schema
+// schema
 const productsSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -22,8 +22,8 @@ const productsSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    enum: ["FOR_SALE", "SOLD_OUT"],
-    default: "FOR_SALE",
+    enum: ['FOR_SALE', 'SOLD_OUT'],
+    default: 'FOR_SALE',
   },
   createdAt: {
     type: Date,
@@ -35,5 +35,5 @@ const productsSchema = new mongoose.Schema({
   },
 });
 
-// 3. 외부로 보내기
-export default mongoose.model("Products", productsSchema);
+// 3. model
+export default mongoose.model('Products', productsSchema);

@@ -10,6 +10,7 @@ const createTodoSchema = Joi.object({
 
 // 상품생성 API
 router.post('/products', async (req, res, next) => {
+  //try{
   const { name, description, manager, password } = req.body;
 
   // 유효성 검사
@@ -23,7 +24,7 @@ router.post('/products', async (req, res, next) => {
   if (!name || !description || !manager || !password) {
     return res.status(400).json({
       status: '400',
-      message: '상품 정보를 모두 입력해주세요.',
+      message: '상품 정보를 전부 입력하셔야합니다.',
     });
   }
 
@@ -102,7 +103,7 @@ router.patch('/products/:productId', async (req, res, next) => {
   if (!name || !description || !manager || !status) {
     return res.status(400).json({
       status: '400',
-      message: '상품 정보를 모두 입력해주세요.',
+      message: '상품 정보를 전부 입력하셔야합니다.',
     });
   }
   if (name) {
@@ -132,7 +133,7 @@ router.patch('/products/:productId', async (req, res, next) => {
 
   return res.status(200).json({
     status: '200',
-    message: '상품 수정에 성공했습니다.',
+    message: '상품 정보 수정에 성공했습니다.',
     data: {
       id: currentProduct._id,
       name: currentProduct.name,
