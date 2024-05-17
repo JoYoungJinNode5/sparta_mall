@@ -5,7 +5,7 @@ dotenv.config();
 const connect = () => {
   mongoose
     .connect(
-      'mongodb+srv://sparta-user:<password>@express-mongo.ncd0rot.mongodb.net/?retryWrites=true&w=majority&appName=express-mongo',
+      'mongodb+srv://sparta-user:aaaa4321@express-mongo.ncd0rot.mongodb.net/?retryWrites=true&w=majority&appName=express-mongo',
       {
         dbName: 'sparta_mall',
       }
