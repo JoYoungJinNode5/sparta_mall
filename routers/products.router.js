@@ -13,7 +13,6 @@ router.post('/products', async (req, res, next) => {
   //try{
   const { name, description, manager, password } = req.body;
 
-  // 유효성 검사
   const existingName = await Products.findOne({ name }).exec();
   if (existingName) {
     return res.status(400).json({
