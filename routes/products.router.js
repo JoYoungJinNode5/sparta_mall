@@ -1,16 +1,16 @@
 import express from "express";
+import Joi from "joi";
 import Products from "../schemas/product.schema.js";
 
 const router = express.Router();
 
-// mongoose 가져오기
-import mongoose from "mongoose";
+const createTodoSchema = Joi.object({
+  value: Joi.string().min(1).max(50).required(),
+});
 
-/** API 구현 **/
-/** 상품생성(C),[POST],'/products' API **/
+// 상품생성 API
 router.post("/products", async (req, res, next) => {
-  // 1. 클라이언트로부터 전달받은 데이터를 가져온다.
-  // 1-1. name, description, manager, password (사용자 입력)
+  // 1. 클라이언트로가 보낸 리퀘스트 데이터 저장
   const { name, description, manager, password } = req.body;
 
   // 2. 유효성 검사
