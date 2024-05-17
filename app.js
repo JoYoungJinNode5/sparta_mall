@@ -1,6 +1,7 @@
 import express from 'express';
 import connect from './schemas/index.js';
-import productsRouter from 'routers/products.router.js';
+import productsRouter from './routers/products.router.js';
+import errorHandlerMiddleware from './middlewares/error-handler.middleware.js';
 
 const app = express();
 const PORT = 3000;
